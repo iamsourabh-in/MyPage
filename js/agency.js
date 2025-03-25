@@ -31,3 +31,14 @@
     })
 
 })(jQuery); // End of use strict
+
+
+$(window).scroll(function() {
+    var scrollDistance = $(window).scrollTop();
+    $('section').each(function(i) {
+        if ($(this).position().top <= scrollDistance + 100) {
+            $('.navbar-nav li.active').removeClass('active');
+            $('.navbar-nav li').eq(i).addClass('active');
+        }
+    });
+}).scroll();

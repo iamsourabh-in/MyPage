@@ -238,8 +238,21 @@ header {
   color: white;
 }
 header .intro-text {
-  padding-top: 100px;
-  padding-bottom: 50px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+header.loaded .intro-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+header .btn-xl {
+  transition: transform 0.3s ease;
+}
+
+header .btn-xl:hover {
+  transform: scale(1.1);
 }
 header .intro-text .intro-lead-in {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -743,4 +756,8 @@ img::-moz-selection {
 }
 body {
   webkit-tap-highlight-color: #3A99FF;
+}
+.navbar-nav li.active a {
+  color: #3A99FF; /* Or any color you want */
+  font-weight: bold;
 }
